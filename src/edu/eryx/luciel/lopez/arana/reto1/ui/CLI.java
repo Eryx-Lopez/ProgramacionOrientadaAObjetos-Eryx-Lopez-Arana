@@ -13,11 +13,19 @@ public class CLI {
                 "1.- Sumar \n2.- Restar \n3.- Multiplicar \n4.- Dividir");
         int opcionElegida = opcion.nextInt(); opcion.nextLine();
 
+        while (opcionElegida > 4 || opcionElegida < 1){
+            System.out.println("Por favor ingresa una opción válida");
+            System.out.println("\n1.- Sumar \n2.- Restar \n3.- Multiplicar \n4.- Dividir");
+            opcionElegida = opcion.nextInt();
+        }
+
         System.out.println("Introduzca el primer dígito: ");
         int numero1 = opcion.nextInt(); opcion.nextLine();
 
         System.out.println("Introduzca el segundo dígito: ");
         int numero2 = opcion.nextInt(); opcion.nextLine();
+
+
 
         switch (opcionElegida){
             case 1:
