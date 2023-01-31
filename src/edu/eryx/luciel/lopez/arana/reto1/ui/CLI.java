@@ -24,8 +24,7 @@ public class CLI {
 
         System.out.println("Introduzca el segundo dígito: ");
         int numero2 = opcion.nextInt(); opcion.nextLine();
-
-
+        
 
         switch (opcionElegida){
             case 1:
