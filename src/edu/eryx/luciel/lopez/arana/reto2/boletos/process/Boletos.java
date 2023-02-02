@@ -1,5 +1,3 @@
-package edu.eryx.luciel.lopez.arana.reto2.boletos.process;
-
 /**
  * Precio de los boletos, como el precio de adultos mayores (sin credencial) y niños es el mismo
  * se guardó en una sola variable
@@ -13,8 +11,9 @@ package edu.eryx.luciel.lopez.arana.reto2.boletos.process;
  *
  * @param calcularCosto multiplica el precio de los boletos que se pidieron por la cantidad
  * @return costo total de la cantidad de boletos ordenada
- * @author eryxl
+ *
  **/
+package edu.eryx.luciel.lopez.arana.reto2.boletos.process;
 public class Boletos{
 
 

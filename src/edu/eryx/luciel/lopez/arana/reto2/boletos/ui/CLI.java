@@ -1,19 +1,24 @@
-package edu.eryx.luciel.lopez.arana.reto2.boletos.ui;
-
-import edu.eryx.luciel.lopez.arana.reto2.boletos.process.Boletos;
-
-import java.util.Scanner;
-
 /**
  * Interfaz con el usuario para informar el tipo de boletos que hay y el precio que éstos tienen.
+ * @param numAdulto número de boletos de Adulto
+ * @param numMenorYMayor número de boletos de niño o de adulto mayor sin credencial, ya que éstos cuestan
+ *                       lo mismo
+ * @param numAdultoMayor número de boletos de adulto mayor con credencial del INAPAM
+ * @param cuentaFinal variable hecha para salir del while al momento de pedir la cuenta final
+ * @param tipoDeBoleto para el switch case, separar el tipo de boleto
  *
- */
+ * */
+package edu.eryx.luciel.lopez.arana.reto2.boletos.ui;
+import edu.eryx.luciel.lopez.arana.reto2.boletos.process.Boletos;
+import java.util.Scanner;
+
+
 public class CLI {
     public static void  showMenu(){
         int numAdulto = 0;
         int numMenorYMayor = 0;
         int numAdultoMayor = 0;
-        int cuenta = 0;
+        int cuentaFinal = 0;
 
         System.out.println("Bienvenido/a \n");
         salida:
@@ -43,11 +48,11 @@ public class CLI {
                     numAdultoMayor++;
                     break;
                 case 4:
-                    cuenta++;
+                    cuentaFinal++;
 
             }
         }
-        while (cuenta == 0);
+        while (cuentaFinal == 0);
 
 
         System.out.println("Su cuenta final es: $"+Boletos.calcularCosto(numAdulto,numMenorYMayor,numAdultoMayor));
