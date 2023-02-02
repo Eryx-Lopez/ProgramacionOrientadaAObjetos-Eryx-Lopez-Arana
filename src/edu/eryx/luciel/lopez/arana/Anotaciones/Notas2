@@ -1,0 +1,12 @@
+El objetivo de la programación es la resolución de problemas mediante datos.
+
+    1. Datos de entrada
+    2. Proceso
+    3. Datos de salida
+Public: tipo de clase
+Static:
+Void: valores de retorno
+
+El .next en el scanner, va leyendo parte por parte, mientras que el .nextLine lee hasta el salto de línea
+
+
