@@ -1,7 +1,9 @@
+/**
+ * Clase para pedir el número de asterisco o filas, que serán el tamaño de la pirámide
+ * @param asteriscos almacena el número de asteriscos
+ * */
 package edu.eryx.luciel.lopez.arana.reto2.piramide.ui;
-
 import edu.eryx.luciel.lopez.arana.reto2.piramide.process.Piramide;
-
 import java.util.Scanner;
 
 public class CLI {

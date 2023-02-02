@@ -1,18 +1,20 @@
+/**
+ * Clase para realizar el cálculo de la pirámide, segun los asteriscos dados por el usuario
+ * @param numAsteriscos número de filas de asteriscos
+ * 
+ * @author eryxl
+ * */
+
 package edu.eryx.luciel.lopez.arana.reto2.piramide.process;
 
 import java.util.Scanner;
 
 public class Piramide {
-    /**
-     * Clase para pedir e imprimir el número de asteriscos que se da por el usuario
-     *
-     * @author eryxl
-     * */
 
 
     public static void imprimirAsteriscos(int numAsteriscos){
 
-        for (int i=0; i<numAsteriscos; i++){ //número de filas de asteriscos
+        for (int i=0; i<numAsteriscos; i++){
             for (int j=1; j<numAsteriscos-i; j++){
                 System.out.print(" ");
             }
