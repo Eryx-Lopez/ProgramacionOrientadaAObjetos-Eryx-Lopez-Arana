@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>Notas</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Notas</font>
+</center></td></tr></table>
+<pre><span class="s0">StringBuilder</span>
+<span class="s0">String y = &quot;Hola&quot;;</span>
+<span class="s0">--&gt; y.concat(&quot; mundo.&quot;);        y+&quot;mundo&quot;;      es lo mismo, no hay diferencia, al compilar, el programa cambia</span>
+
+
+<span class="s0">Los primitivos se guardan en el stack, no en e heap.                |      variable.concat(&quot;&quot;);</span>
+<span class="s0">El == no compara directamente los stacks, por eso no se usa         |     variable.charAt(0); El valor entre paréntesis es el que muestra</span>
+<span class="s0">para comparar objetos (String)                                      |     variable.equals(blabla);</span>
+<span class="s0">En los Strings compararía las direcciones de memoria.               |      variable.equalsIgnoreCase;</span>
+<span class="s0">Para Strings se usa el equals o el equalsIgnoreCase                 |</span>
+
+<span class="s0">El procesador tiene como prioridad al usuario.                      |</span>
+<span class="s0">El GARBAGE COLLECTOR es para desocupar la memoria.                  |</span>
+
+<span class="s0">String[] blbala = new String[dimensiones];                          |      se declara del lado derecho del igual/se crea el tipo de dato</span>
+
+<span class="s0">ArratList&lt;String&gt; y = new ArrayList&lt; &gt;();                           |     los elementos dentro de mi ARRAY son de tipo String</span>
+<span class="s0">x[0] = &quot;Hola&quot;                                                       |     en los arreglos no se pueden eliminar espacios, se llenan con un null</span>
+<span class="s0">println (x[0]);                                                     |     sin embargo, en los ArrayList se puede usar el remove.</span>
+<span class="s0">println (y.get(0);                                                  |     si se hace esto</span>
+<span class="s0">x[0] = &quot; &quot;;                                                         |       - en arreglo</span>
+<span class="s0">x[0] = null;                                                        |       - en arreglo</span>
+<span class="s0">y.remove(0);                                                        |     - en ArrayList</span>
+
+<span class="s0">y.set(0, nuevo valor)                                               |     si yo no lo quiero borrar, pero lo quiero reemplazar, uso el .set.</span>
+<span class="s0">El ArrayList se llama así ya que es una lista arreglada, es más</span>
+<span class="s0">rápida para leer.</span>
+<span class="s0">Si se eliminan muchos elementos, no se debe usar el ArrayList,</span>
+<span class="s0">sino se usa el LinkedList                                           |      se usa cuando se van a borrar y a agregar más elementos</span>
+
+
+</pre>
+</body>
+</html>

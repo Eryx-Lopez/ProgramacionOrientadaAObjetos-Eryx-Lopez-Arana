@@ -1,0 +1,31 @@
+StringBuilder
+String y = "Hola";
+--> y.concat(" mundo.");        y+"mundo";      es lo mismo, no hay diferencia, al compilar, el programa cambia
+
+
+Los primitivos se guardan en el stack, no en e heap.                |      variable.concat("");
+El == no compara directamente los stacks, por eso no se usa         |     variable.charAt(0); El valor entre paréntesis es el que muestra
+para comparar objetos (String)                                      |     variable.equals(blabla);
+En los Strings compararía las direcciones de memoria.               |      variable.equalsIgnoreCase;
+Para Strings se usa el equals o el equalsIgnoreCase                 |
+
+El procesador tiene como prioridad al usuario.                      |
+El GARBAGE COLLECTOR es para desocupar la memoria.                  |
+
+String[] blbala = new String[dimensiones];                          |      se declara del lado derecho del igual/se crea el tipo de dato
+
+ArratList<String> y = new ArrayList< >();                           |     los elementos dentro de mi ARRAY son de tipo String
+x[0] = "Hola"                                                       |     en los arreglos no se pueden eliminar espacios, se llenan con un null
+println (x[0]);                                                     |     sin embargo, en los ArrayList se puede usar el remove.
+println (y.get(0);                                                  |     si se hace esto
+x[0] = " ";                                                         |       - en arreglo
+x[0] = null;                                                        |       - en arreglo
+y.remove(0);                                                        |     - en ArrayList
+
+y.set(0, nuevo valor)                                               |     si yo no lo quiero borrar, pero lo quiero reemplazar, uso el .set.
+El ArrayList se llama así ya que es una lista arreglada, es más
+rápida para leer.
+Si se eliminan muchos elementos, no se debe usar el ArrayList,
+sino se usa el LinkedList                                           |      se usa cuando se van a borrar y a agregar más elementos
+
+
