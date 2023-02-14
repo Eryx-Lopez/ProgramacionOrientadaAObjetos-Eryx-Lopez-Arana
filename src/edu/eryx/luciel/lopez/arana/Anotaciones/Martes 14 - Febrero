@@ -1,18 +1,39 @@
 Collection
     - Set
-        - Map
-        - HashSet
-        - LinkedHashSet
-        - TreeSet
+        - HashSet                Unordered (Desorganizado)
+                                    No admite duplicados
+
+        - LinkedHashSet          Ordered (Organizado)
+                                    Se organiza mediante van entrando.
+
+        - TreeSet                Sorted (Ordenado a base de un criterio)
+
+    - Map
+        - HashMap           Unordered (Desorganizado)
+
+        - LinkedHashMap     Ordered (Organizado)
+                                Se organiza mediante van entrando.
+
+        - TreeMap           Sorted (Ordenado a base de un criterio)
+
     - List
         - ArrayList
         - LinkedList
+
     - Dequeue
-    - Map
-        - HashMap
-        - LinkedHasMap
-        - TreeMap
+
+Convierte ese objeto a una llave que lo representa (HashMap y HashSet más que nada)
 
 
 Programación concurrente
+HashCode genera una llave numérica que corresponde a uno de los índices de Map
+
+Se le llama mapeo al representar un algo mediante otra cosa que debería de estar relacionado.
+
+En en el MAP se representan dos valores, mietras que el SET es sólo un valor.
+
+
+
+
+
 
