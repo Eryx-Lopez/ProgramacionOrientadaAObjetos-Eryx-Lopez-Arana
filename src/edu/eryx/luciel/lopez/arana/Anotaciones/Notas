@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 StringBuilder
 String y = "Hola";
 --> y.concat(" mundo.");        y+"mundo";      es lo mismo, no hay diferencia, al compilar, el programa cambia
@@ -29,3 +30,13 @@ Si se eliminan muchos elementos, no se debe usar el ArrayList,
 sino se usa el LinkedList                                           |      se usa cuando se van a borrar y a agregar más elementos
 
 
+=======
+2023-02-14
+
+- Patrón de diseño
+- return this devuelve la instancia actual
+Es parecido al Builder
+Expreión lambda
+La interfaz funcional sólo tiene un método, mientras que la interfaz general puede tener los que sean necesarios.
+Para que haya una función lambda, necesita haber una función
+>>>>>>> Stashed changes
