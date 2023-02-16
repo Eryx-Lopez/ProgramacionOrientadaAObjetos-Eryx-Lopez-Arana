@@ -1,0 +1,21 @@
+ARREGLOS
+
+En java no hay como tal arreglos bidimensionales, lo que pasa es que hay un solo arreglo (filas/vertical) que a su vez
+contiene un arreglo en cada espacio.
+
+Para recorrer los arreglos, se usa un for
+for(int i = 0; i < arr.length; i++)
+    for (int j = 0; j < arr[i]; j++)
+    arr[i][j]
+
+
+Para encontrar un valor máximo o mínimo en una serie no ordenada, se recorren todos los elementos para encontrar dicho
+valor
+
+int arr[3] = {10, 0, -5};                                      Se establecen tres valores
+for (int i = 0; i < arr.length(); i++){                        Se recorre el tamaño del arreglo
+    aux = arr[i];                                              Mi variable auxiliar toma el tamaño de los valores del arreglo, uno por uno
+    if (aux > max){                                            Con un if, establezco que si el auxiliar 
+        max = aux
+        }
+}
