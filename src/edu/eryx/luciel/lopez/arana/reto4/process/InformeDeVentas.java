@@ -1,13 +1,10 @@
 package edu.eryx.luciel.lopez.arana.reto4.process;
 
-public class InformeDeVentas {
-    double[][] tablaDeVentas = {
-            {111, 483, 471, 427},
-            {192, 500, 355, 158},
-            {289, 470, 474, 160},
-            {415, 114, 161, 308}
-    };
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
+public class InformeDeVentas {
+/*
     public static double getMaxChocolate(double[] tabla) {
         double maxChocolate = Double.MIN_VALUE; //El valor más pequeño existente (-infinito)
         for (int i = 0; i < tabla[0]; i++) { //i representa las filas y
@@ -55,20 +52,25 @@ public class InformeDeVentas {
         }
         return maxOreo;
     }
+*/
+    public static ArrayList<Integer> getMaxProductFromTrimester(double[][] tabla) {
 
-    public static double getMaxProductFromTrimester(double[][] tabla) {
-        double max = Double.MIN_VALUE; //El valor más pequeño existente (-infinito)
-        // int auxIndex = 0;
+        ArrayList<Integer> maximos = new ArrayList<>();
 
-        for (int i = 0; i < tabla[0].length; i++) { //i representa las filas y j las columnas
-            for (int j = 0; j < tabla.length; j++) {
+        for (int i = 0; i < tabla.length; i++) { //i representa las filas y j las columnas
+            double max = Double.MIN_VALUE; //El valor más pequeño existente (-infinito)
+            int auxIndex = 0;
+            for (int j = 0; j < tabla[i].length; j++) {
                 if (tabla[i][j] > max) {
+                    auxIndex = j;
                     max = tabla[i][j];
                 }
 
             }
+            maximos.add(auxIndex);
         }
-        return max;
+
+        return maximos;
     }
 
 }
