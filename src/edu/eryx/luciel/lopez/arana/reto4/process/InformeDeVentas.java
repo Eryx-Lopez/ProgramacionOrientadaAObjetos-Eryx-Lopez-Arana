@@ -1,58 +1,8 @@
 package edu.eryx.luciel.lopez.arana.reto4.process;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class InformeDeVentas {
-/*
-    public static double getMaxChocolate(double[] tabla) {
-        double maxChocolate = Double.MIN_VALUE; //El valor más pequeño existente (-infinito)
-        for (int i = 0; i < tabla[0]; i++) { //i representa las filas y
-            for (int j = 0; j < tabla.length; j++) { //j las columnas
-                if (tabla[i] > maxChocolate) {
-                    maxChocolate = tabla[i];
-                }
-            }
-        }
-        return maxChocolate;
-    }
-
-    public static double getMaxVainilla(double[] tabla) {
-        double maxVainilla = Double.MIN_VALUE;
-        for (int i = 0; i < tabla[1]; i++) {
-            for (int j = 0; j < tabla.length; j++) {
-                if (tabla[i] > maxVainilla) {
-                    maxVainilla = tabla[i];
-                }
-            }
-        }
-        return maxVainilla;
-    }
-
-    public static double getMaxFresa(double[] tabla) {
-        double maxFresa = Double.MIN_VALUE;
-        for (int i = 0; i < tabla[2]; i++) {
-            for (int j = 0; j < tabla.length; j++) {
-                if (tabla[i] > maxFresa) {
-                    maxFresa = tabla[i];
-                }
-            }
-        }
-        return maxFresa;
-    }
-
-    public static double getMaxOreo(double[] tabla) {
-        double maxOreo = Double.MIN_VALUE;
-        for (int i = 0; i < tabla[3]; i++) { //i representa las filas y
-            for (int j = 0; j < tabla.length; j++) { //j las columnas
-                if (tabla[i] > maxOreo) {
-                    maxOreo = tabla[i];
-                }
-            }
-        }
-        return maxOreo;
-    }
-*/
     public static ArrayList<Integer> getMaxProductFromTrimester(double[][] tabla) {
 
         ArrayList<Integer> maximos = new ArrayList<>();
@@ -71,6 +21,24 @@ public class InformeDeVentas {
         }
 
         return maximos;
+    }
+
+    public static int maxTrimester(double[][] tabla){
+        int maxTrimester = 0;
+
+        int auxIndex = 0;
+
+        for (int i = 0; i < tabla.length; i++){
+            int sumaDeVentas = 0;
+            for (int j = 0; j < tabla.length; j++) {
+                sumaDeVentas += tabla[j][i];
+            }
+            if (sumaDeVentas > maxTrimester) {
+                maxTrimester = sumaDeVentas;
+               auxIndex = i;
+            }
+        }
+        return auxIndex;
     }
 
 }
