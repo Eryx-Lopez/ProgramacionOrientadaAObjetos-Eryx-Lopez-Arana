@@ -4,7 +4,7 @@ import edu.eryx.luciel.lopez.arana.utils.Menu;
 import edu.eryx.luciel.lopez.arana.utils.MenuAction;
 
 public class CLI {
-
+/*
     public static String[] easyWords = {
             "fuego", "gato",
             "blanco", "planta"};
@@ -15,7 +15,7 @@ public class CLI {
             "electrocardiograma", "anticonstitucional",
             "groenlandia", "hipopotomonstrosesquipedaliofobia"};
 
-
+*/
 
 
     private static String easy_Mode_Option = "Fácil";

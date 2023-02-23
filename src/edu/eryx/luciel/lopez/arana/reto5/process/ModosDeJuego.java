@@ -1,29 +1,44 @@
 package edu.eryx.luciel.lopez.arana.reto5.process;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
+
 public class ModosDeJuego {
 
     private static String getRandomEasyWord(){
-        int random = (int) (Math.random()*4);
-        String easyWords = new String[] {"fuego", "gato", "blanco", "planta"}[random];
-        return easyWords;
-        }
+        List<String> easyWords = Arrays.asList("fuego", "gato", "blanco", "planta");
+        Random random = new Random();
+
+        int randomitem = random.nextInt(easyWords.size());
+        String randomEasyWords = easyWords.get(randomitem);
+
+        return randomEasyWords;
+    }
 
     private static String getRandomMediumWords() {
-        int random = (int) (Math.random()*4);
-        String mediumWords = new String[] { "furgoneta", "salamandra", "armadura", "arquitectura"}[random];
-        return mediumWords;
+        List<String> mediumWords = Arrays.asList("furgoneta", "salamandra", "armadura", "arquitectura");
+        Random random = new Random();
+
+        int randomitem = random.nextInt(mediumWords.size());
+        String randomMediumWords = mediumWords.get(randomitem);
+
+        return randomMediumWords;
     }
     private static String getRandomDifficultWords() {
-            int random = (int) (Math.random()*4);
-            String difficultWords = new String[] { "electrocardiograma", "anticonstitucional",
-                    "groenlandia", "hipopotomonstrosesquipedaliofobia"}[random];
-        return difficultWords;
+        List<String> mediumWords = Arrays.asList("electrocardiograma", "anticonstitucional",
+                "groenlandia", "hipopotomonstrosesquipedaliofobia";
+        Random random = new Random();
+
+        int randomitem = random.nextInt(mediumWords.size());
+        String randomDifficultWords = mediumWords.get(randomitem);
+
+        return randomDifficultWords;
+
     }
-
-
     public static String easyMode(){
 
-    }
+    }return;
 }
 
 //https://stackoverflow.com/questions/6726963/random-string-from-string-array-list
