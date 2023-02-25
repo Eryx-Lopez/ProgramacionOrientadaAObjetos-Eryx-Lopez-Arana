@@ -16,7 +16,7 @@ public class ModosDeJuego {
         return randomEasyWords;
     }
 
-    public static String getRandomMediumWords() {
+    public static String getRandomMediumWord() {
         List<String> mediumWords = Arrays.asList("furgoneta", "salamandra", "armadura", "arquitectura");
         Random random = new Random();
 
@@ -25,7 +25,7 @@ public class ModosDeJuego {
 
         return randomMediumWords;
     }
-    public static String getRandomDifficultWords() {
+    public static String getRandomDifficultWord() {
         List<String> mediumWords = Arrays.asList("electrocardiograma", "anticonstitucional",
                 "groenlandia", "hipopotomonstrosesquipedaliofobia");
         Random random = new Random();
@@ -35,7 +35,28 @@ public class ModosDeJuego {
 
         return randomDifficultWords;
     }
-    
+
+    public static void encriptedEasyWords(){
+        String randomEasyWord = getRandomEasyWord();
+        for (int i = 0; i < randomEasyWord.length(); i++) {
+            char encriptedEasyWord = 'x';
+            System.out.print(encriptedEasyWord);
+        }
+    }
+    public static void encriptedMediumWords(){
+        String randomMediumWord = getRandomMediumWord();
+        for (int i = 0; i < randomMediumWord.length(); i++) {
+            char encriptedMediumWord = 'x';
+            System.out.print(encriptedMediumWord);
+        }
+    }
+    public static void encriptedDifficultWords(){
+        String randomDifficultWord = getRandomDifficultWord();
+        for (int i = 0; i < randomDifficultWord.length(); i++) {
+            char encriptedDifficultWord = 'x';
+            System.out.print(encriptedDifficultWord);
+        }
+    }
 
 }
 

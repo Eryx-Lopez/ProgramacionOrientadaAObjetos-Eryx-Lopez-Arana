@@ -18,7 +18,7 @@ public class Menu {
 
         private String Type_Error = "El valor ingresado debe de ser un número, por favor introduzca un valor disponible.";
 
-        private String Invalid_Option = "Opción no disponible, por favor introduzca un número válido";
+        private String Invalid_Option = "Opción no disponible, por favor introduzca un número válido:";
 
         private ArrayList<String> optionList = new ArrayList<>();
         private ArrayList<MenuAction> actionList = new ArrayList<>();
@@ -75,8 +75,7 @@ public class Menu {
             while (true) {
 
                 try {
-                    int numeroOpcion = scanner.nextInt();
-                    scanner.nextLine();
+                    int numeroOpcion = scanner.nextInt(); scanner.nextLine();
 
                     if (numeroOpcion < 1 || numeroOpcion > actionList.size() + 1) {
                         System.out.print(Invalid_Option);
@@ -84,6 +83,7 @@ public class Menu {
                     }
                     return numeroOpcion;
                 } catch (InputMismatchException error) {
+                    scanner.nextLine();
                     System.out.println(Type_Error);
                 }
             }
