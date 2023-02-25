@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class ModosDeJuego {
 
-    private static String getRandomEasyWord(){
+    public static String getRandomEasyWord(){
         List<String> easyWords = Arrays.asList("fuego", "gato", "blanco", "planta");
         Random random = new Random();
 
@@ -16,7 +16,7 @@ public class ModosDeJuego {
         return randomEasyWords;
     }
 
-    private static String getRandomMediumWords() {
+    public static String getRandomMediumWords() {
         List<String> mediumWords = Arrays.asList("furgoneta", "salamandra", "armadura", "arquitectura");
         Random random = new Random();
 
@@ -25,20 +25,18 @@ public class ModosDeJuego {
 
         return randomMediumWords;
     }
-    private static String getRandomDifficultWords() {
+    public static String getRandomDifficultWords() {
         List<String> mediumWords = Arrays.asList("electrocardiograma", "anticonstitucional",
-                "groenlandia", "hipopotomonstrosesquipedaliofobia";
+                "groenlandia", "hipopotomonstrosesquipedaliofobia");
         Random random = new Random();
 
         int randomitem = random.nextInt(mediumWords.size());
         String randomDifficultWords = mediumWords.get(randomitem);
 
         return randomDifficultWords;
-
     }
-    public static String easyMode(){
+    
 
-    }return;
 }
 
 //https://stackoverflow.com/questions/6726963/random-string-from-string-array-list

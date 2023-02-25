@@ -21,7 +21,7 @@ public class Menu {
         private String Invalid_Option = "Opción no disponible, por favor introduzca un número válido";
 
         private ArrayList<String> optionList = new ArrayList<>();
-        private ArrayList<MenuAction> actionList = new ArrayList<MenuAction>();
+        private ArrayList<MenuAction> actionList = new ArrayList<>();
 
         private boolean alive = true;
 
@@ -56,13 +56,12 @@ public class Menu {
      * Imprime el menú con las opciones que se deseen, ya que esas se agregan como objetos del ArrayList
      */
         public void showMenu() {
-            System.out.print("Menu");
+            System.out.print("---- Menu ----\n");
             for (int i = 0; i < optionList.size(); i++){
-                System.out.printf("%d.- %s.", i + 1, optionList.get(i));
+                System.out.printf("%d.- %s\n", i + 1, optionList.get(i));
             }
-            System.out.print(Request_Option);
             System.out.println();
-            System.out.printf("%d) %s.\n", optionList.size() + 1, "Salir");
+            System.out.print(Request_Option);
 
         }
 
@@ -76,8 +75,9 @@ public class Menu {
             while (true) {
 
                 try {
-                    Scanner scanner = new Scanner(System.in);
                     int numeroOpcion = scanner.nextInt();
+                    scanner.nextLine();
+
                     if (numeroOpcion < 1 || numeroOpcion > actionList.size() + 1) {
                         System.out.print(Invalid_Option);
                         continue;
@@ -92,6 +92,7 @@ public class Menu {
             if (option == optionList.size()){
                 killMenu();
                 System.out.println("Saliendo...");
+                return;
             }
             actionList.get(option-1).run(scanner);
         }
