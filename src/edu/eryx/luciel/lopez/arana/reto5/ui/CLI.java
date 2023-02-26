@@ -4,6 +4,14 @@ import edu.eryx.luciel.lopez.arana.reto5.process.ModosDeJuego;
 import edu.eryx.luciel.lopez.arana.utils.Menu;
 import edu.eryx.luciel.lopez.arana.utils.MenuAction;
 
+/**
+ * Se encarga de lo relacionado con el menú, añadiendo las opciones de dificultad para luego encargarse
+ * de ejecutar la acción correspondiente
+ *
+ * Se usa el menú del paquete utils.
+ *
+ * @author eryxl
+ */
 public class CLI {
 
     private static String easyMode = ">>Modo Fácil<<";
@@ -14,6 +22,9 @@ public class CLI {
     private static String selectMeduimOption = "Intermedio";
     private static String selectDifficultOption = "Difícil";
     private static Menu menu = new Menu();
+    /**
+     * Es la acción encargada de correr el modo fácil
+     */
     private static MenuAction easyAction = (scanner) -> {
         System.out.println(easyMode);
         String randomEasyWords = "";
@@ -22,6 +33,9 @@ public class CLI {
         System.out.println();
     };
 
+    /**
+     * Es la acción encargada de correr el modo intermedio
+     */
     private static MenuAction mediumAction = (scanner) -> {
         System.out.println(mediumMode);
         String randomMediumWords = "";
@@ -30,6 +44,9 @@ public class CLI {
 
         System.out.println();
     };
+    /**
+     * Es la acción encargada de correr el modo difícil
+     */
     private static MenuAction difficultAction = (scanner) -> {
         System.out.println(difficultMode);
         String randomDifficultWords = "";
@@ -50,6 +67,11 @@ public class CLI {
                 .createMenu();
 
     }
+
+    /**
+     * Ejecuta el menú, mientras este viva, es decir, mientras el usuario no decida salir de él (última opción,
+     * en este caso la cuatro)
+     */
     public static void playGame(){
         do {
             menu.showMenu();

@@ -1,10 +1,21 @@
 package edu.eryx.luciel.lopez.arana.reto5.process;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
+/**
+ * Contiene los diferentes modos de juego, fácil, intermedio y difícil
+ * @author eryxl
+ */
 public class ModosDeJuego {
-
+    /**
+     * Es el método correspondiente al nivel fácil, conteniendo palabras cortas y fáciles de adivinar
+     * Las elige dentro de una lista, de forma aleatoria, para luego dejar que el usuario vaya introduciendo
+     * letra por letra hasta encontrar las que sí pertenezcan a la palabra original.
+     *
+     * Los intentos se guardan en el ArrayList triedLetters, mientras que las ya adivinadas se guardan en guessedLetters
+     * Esto se repite hasta que la longitud de las letras adivinadas es igual al de la palabra original (ya se
+     * adivinaron todas las letras)
+     */
     public static void getRandomEasyWord() {
 
         List<String> easyWords = Arrays.asList("fuego", "gato", "blanco", "planta");
@@ -50,6 +61,11 @@ public class ModosDeJuego {
         }
 
     }
+
+    /**
+     * Hace exactamente lo mismo que la función pasada, sólo que con las palabras de dificultad media
+     * Nota: aquí es cuando me di cuenta que justo por eso lo pude haber separado, pero creo que ya es muy tarde para eso
+     */
     public static void getRandomMediumWord() {
         List<String> mediumWords = Arrays.asList("furgoneta", "salamandra", "armadura", "arquitectura");
         Random random = new Random();
@@ -93,6 +109,10 @@ public class ModosDeJuego {
 
         }
     }
+    /**
+     * Hace exactamente lo mismo que la función pasada, sólo que con las palabras de dificultad media
+     *
+     */
     public static void getRandomDifficultWord(){
         List<String> difficultWords = Arrays.asList("electrocardiograma", "anticonstitucional",
                 "groenlandia", "hipopotomonstrosesquipedaliofobia");
