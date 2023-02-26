@@ -1,61 +1,142 @@
 package edu.eryx.luciel.lopez.arana.reto5.process;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class ModosDeJuego {
 
-    public static String getRandomEasyWord(){
+    public static void getRandomEasyWord() {
+
         List<String> easyWords = Arrays.asList("fuego", "gato", "blanco", "planta");
         Random random = new Random();
-
         int randomitem = random.nextInt(easyWords.size());
-        String randomEasyWords = easyWords.get(randomitem);
+        String randomEasyWord = easyWords.get(randomitem);
 
-        return randomEasyWords;
+        ArrayList<String> triedLetters = new ArrayList<>();
+        ArrayList<Integer> guessedLetters = new ArrayList<>();
+        String letraIntroducida;
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("¡Adivina la palabra letra por letra!");
+
+        while (guessedLetters.size() != randomEasyWord.length()) {
+
+            boolean guessedLetter = false;
+            letraIntroducida = scanner.next().toLowerCase();
+            for (int i = 0; i < randomEasyWord.length(); i++) {
+                if (randomEasyWord.charAt(i) == letraIntroducida.charAt(0)) {
+                    guessedLetter = true;
+                    guessedLetters.add(i);
+                }
+            }
+            if (guessedLetter) {
+                triedLetters.add(letraIntroducida);
+
+                for (int i = 0; i < randomEasyWord.length(); i++) {
+                    if (guessedLetters.contains(i)) {
+                        System.out.print(randomEasyWord.charAt(i));
+                    }
+                    else {
+                        System.out.print("x");
+                    }
+                }
+                System.out.println();
+            }
+            else {
+                triedLetters.add(letraIntroducida);
+                System.out.println("Noup, intenta otra vez");
+            }
+
+        }
+
     }
-
-    public static String getRandomMediumWord() {
+    public static void getRandomMediumWord() {
         List<String> mediumWords = Arrays.asList("furgoneta", "salamandra", "armadura", "arquitectura");
         Random random = new Random();
-
         int randomitem = random.nextInt(mediumWords.size());
-        String randomMediumWords = mediumWords.get(randomitem);
+        String randomMediumWord = mediumWords.get(randomitem);
 
-        return randomMediumWords;
+        ArrayList<String> triedLetters = new ArrayList<>();
+        ArrayList<Integer> guessedLetters = new ArrayList<>();
+        String letraIntroducida;
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("¡Adivina la palabra letra por letra!");
+
+        while (guessedLetters.size() != randomMediumWord.length()) {
+
+            boolean guessedLetter = false;
+            letraIntroducida = scanner.next().toLowerCase();
+            for (int i = 0; i < randomMediumWord.length(); i++) {
+                if (randomMediumWord.charAt(i) == letraIntroducida.charAt(0)) {
+                    guessedLetter = true;
+                    guessedLetters.add(i);
+                }
+            }
+            if (guessedLetter) {
+                triedLetters.add(letraIntroducida);
+
+                for (int i = 0; i < randomMediumWord.length(); i++) {
+                    if (guessedLetters.contains(i)) {
+                        System.out.print(randomMediumWord.charAt(i));
+                    }
+                    else {
+                        System.out.print("x");
+                    }
+                }
+                System.out.println();
+            }
+            else {
+                triedLetters.add(letraIntroducida);
+                System.out.println("Noup, intenta otra vez");
+            }
+
+        }
     }
-    public static String getRandomDifficultWord() {
-        List<String> mediumWords = Arrays.asList("electrocardiograma", "anticonstitucional",
+    public static void getRandomDifficultWord(){
+        List<String> difficultWords = Arrays.asList("electrocardiograma", "anticonstitucional",
                 "groenlandia", "hipopotomonstrosesquipedaliofobia");
         Random random = new Random();
+        int randomitem = random.nextInt(difficultWords.size());
+        String randomDifficultWord = difficultWords.get(randomitem);
 
-        int randomitem = random.nextInt(mediumWords.size());
-        String randomDifficultWords = mediumWords.get(randomitem);
+        ArrayList<String> triedLetters = new ArrayList<>();
+        ArrayList<Integer> guessedLetters = new ArrayList<>();
+        String letraIntroducida;
 
-        return randomDifficultWords;
-    }
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("¡Adivina la palabra letra por letra!");
 
-    public static void encriptedEasyWords(){
-        String randomEasyWord = getRandomEasyWord();
-        for (int i = 0; i < randomEasyWord.length(); i++) {
-            char encriptedEasyWord = 'x';
-            System.out.print(encriptedEasyWord);
+        while (guessedLetters.size() != randomDifficultWord.length()) {
+
+            boolean guessedLetter = false;
+            letraIntroducida = scanner.next().toLowerCase();
+            for (int i = 0; i < randomDifficultWord.length(); i++) {
+                if (randomDifficultWord.charAt(i) == letraIntroducida.charAt(0)) {
+                    guessedLetter = true;
+                    guessedLetters.add(i);
+                }
+            }
+            if (guessedLetter) {
+                triedLetters.add(letraIntroducida);
+
+                for (int i = 0; i < randomDifficultWord.length(); i++) {
+                    if (guessedLetters.contains(i)) {
+                        System.out.print(randomDifficultWord.charAt(i));
+                    }
+                    else {
+                        System.out.print("x");
+                    }
+                }
+                System.out.println();
+            }
+            else {
+                triedLetters.add(letraIntroducida);
+                System.out.println("Noup, intenta otra vez");
+            }
+
         }
-    }
-    public static void encriptedMediumWords(){
-        String randomMediumWord = getRandomMediumWord();
-        for (int i = 0; i < randomMediumWord.length(); i++) {
-            char encriptedMediumWord = 'x';
-            System.out.print(encriptedMediumWord);
-        }
-    }
-    public static void encriptedDifficultWords(){
-        String randomDifficultWord = getRandomDifficultWord();
-        for (int i = 0; i < randomDifficultWord.length(); i++) {
-            char encriptedDifficultWord = 'x';
-            System.out.print(encriptedDifficultWord);
-        }
+
     }
 
 }

@@ -17,16 +17,15 @@ public class CLI {
     private static MenuAction easyAction = (scanner) -> {
         System.out.println(easyMode);
         String randomEasyWords = "";
-        ModosDeJuego.encriptedEasyWords();
+        ModosDeJuego.getRandomEasyWord();
         System.out.println(randomEasyWords);
-
         System.out.println();
     };
 
     private static MenuAction mediumAction = (scanner) -> {
         System.out.println(mediumMode);
         String randomMediumWords = "";
-        ModosDeJuego.encriptedMediumWords();
+        ModosDeJuego.getRandomMediumWord();
         System.out.println(randomMediumWords);
 
         System.out.println();
@@ -34,7 +33,7 @@ public class CLI {
     private static MenuAction difficultAction = (scanner) -> {
         System.out.println(difficultMode);
         String randomDifficultWords = "";
-        ModosDeJuego.encriptedDifficultWords();
+        ModosDeJuego.getRandomDifficultWord();
         System.out.println(randomDifficultWords);
 
         System.out.println();
@@ -52,9 +51,12 @@ public class CLI {
 
     }
     public static void playGame(){
-        menu.showMenu();
-        var option = menu.readOption();
-        menu.selectAndRunOption(option);
+        do {
+            menu.showMenu();
+            var option = menu.readOption();
+            menu.selectAndRunOption(option);
+        } while (menu.isAlive());
+
 
 
 }
