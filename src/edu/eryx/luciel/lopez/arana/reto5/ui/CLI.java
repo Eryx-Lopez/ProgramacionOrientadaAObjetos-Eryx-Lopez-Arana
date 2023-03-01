@@ -13,7 +13,7 @@ import edu.eryx.luciel.lopez.arana.utils.MenuAction;
  * @author eryxl
  */
 public class CLI {
-
+    private static String instruction = "¡Adivina la palabra letra por letra!";
     private static String easyMode = ">>Modo Fácil<<";
     private static String mediumMode = ">>Modo Intermedio<<";
     private static String difficultMode = ">>Modo Difícil<<";
@@ -27,6 +27,7 @@ public class CLI {
      */
     private static MenuAction easyAction = (scanner) -> {
         System.out.println(easyMode);
+        System.out.println(instruction);
         String randomEasyWords = "";
         ModosDeJuego.getRandomEasyWord();
         System.out.println(randomEasyWords);
@@ -38,6 +39,7 @@ public class CLI {
      */
     private static MenuAction mediumAction = (scanner) -> {
         System.out.println(mediumMode);
+        System.out.println(instruction);
         String randomMediumWords = "";
         ModosDeJuego.getRandomMediumWord();
         System.out.println(randomMediumWords);
@@ -49,6 +51,7 @@ public class CLI {
      */
     private static MenuAction difficultAction = (scanner) -> {
         System.out.println(difficultMode);
+        System.out.println(instruction);
         String randomDifficultWords = "";
         ModosDeJuego.getRandomDifficultWord();
         System.out.println(randomDifficultWords);
