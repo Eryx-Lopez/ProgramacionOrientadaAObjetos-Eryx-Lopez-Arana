@@ -13,6 +13,13 @@ import edu.eryx.luciel.lopez.arana.utils.MenuAction;
  * @author eryxl
  */
 public class CLI {
+    private static void alternativeExit (){
+        String alternativeExitNumber = "0";
+        if (alternativeExitNumber.equals("0")){
+            menu
+                    .killMenu();
+        }
+    }
     private static String instruction = "¡Adivina la palabra letra por letra!";
     private static String easyMode = ">>Modo Fácil<<";
     private static String mediumMode = ">>Modo Intermedio<<";
@@ -32,6 +39,7 @@ public class CLI {
         ModosDeJuego.getRandomEasyWord();
         System.out.println(randomEasyWords);
         System.out.println();
+        alternativeExit();
     };
 
     /**
@@ -43,20 +51,21 @@ public class CLI {
         String randomMediumWords = "";
         ModosDeJuego.getRandomMediumWord();
         System.out.println(randomMediumWords);
-
         System.out.println();
+        alternativeExit();
     };
     /**
      * Es la acción encargada de correr el modo difícil
      */
     private static MenuAction difficultAction = (scanner) -> {
+        alternativeExit();
         System.out.println(difficultMode);
         System.out.println(instruction);
         String randomDifficultWords = "";
         ModosDeJuego.getRandomDifficultWord();
         System.out.println(randomDifficultWords);
-
         System.out.println();
+        alternativeExit();
     };
 
     static {

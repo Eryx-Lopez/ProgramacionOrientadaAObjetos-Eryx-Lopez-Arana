@@ -23,22 +23,29 @@ public class ModosDeJuego {
 
         ArrayList<String> triedLetters = new ArrayList<>();
         ArrayList<Integer> guessedLetters = new ArrayList<>();
-        String letraIntroducida;
-
+        String inputLetter;
+        int tries = 0;
         Scanner scanner = new Scanner(System.in);
-
         while (guessedLetters.size() != randomWord.length()) {
 
             boolean guessedLetter = false;
-            letraIntroducida = scanner.next().toLowerCase();
+            inputLetter = scanner.next().toLowerCase();
+
+            if (triedLetters.contains(inputLetter)){
+                System.out.println("Ya introdujo esta letra");
+                tries++;
+                continue;
+
+            }
+
             for (int i = 0; i < randomWord.length(); i++) {
-                if (randomWord.charAt(i) == letraIntroducida.charAt(0)) {
+                if (randomWord.charAt(i) == inputLetter.charAt(0)) {
                     guessedLetter = true;
                     guessedLetters.add(i);
                 }
             }
-            if (guessedLetter ) {
-                triedLetters.add(letraIntroducida);
+            if (guessedLetter) {
+                triedLetters.add(inputLetter);
 
                 for (int i = 0; i < randomWord.length(); i++) {
                     if (guessedLetters.contains(i)) {
@@ -47,12 +54,24 @@ public class ModosDeJuego {
                     else {
                         System.out.print("x");
                     }
+
                 }
                 System.out.println();
+                tries++;
             } else {
-                triedLetters.add(letraIntroducida);
+                tries++;
+                triedLetters.add(inputLetter);
                 System.out.println("Noup, intenta otra vez");
             }
+        }
+        System.out.println("\n");
+        System.out.printf("Te tomó %d intentos.", tries);
+        System.out.println("\n");
+        System.out.println("Felicidades, palabra encontrada.\n¡Juguemos otra vez! (Recuerda que si deseas salir, presiona 4)");
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
     }
 
