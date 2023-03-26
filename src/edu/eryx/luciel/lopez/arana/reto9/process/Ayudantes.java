@@ -10,7 +10,7 @@ public class Ayudantes {
     public List<String> coloresDePiel = Arrays.asList("amarilla", "morada", "blanca", "marrón");
     public int randomitem;
     public String colorDePiel;
-    public List<String> alturas = Arrays.asList("chiquito", "no tan chiquito", "grande", "enorme");
+    public List<String> alturas = Arrays.asList("chiquita", "no tan chiquita", "grande", "enorme");
     public String altura;
     public int nivelDeCreacion;
     public int nivelDeArreglo;
