@@ -1,8 +1,12 @@
-package edu.eryx.luciel.lopez.arana.reto9.ui;
+package edu.eryx.luciel.lopez.arana.reto9.Parte2.ui;
 
 
-import edu.eryx.luciel.lopez.arana.reto9.process.Ayudantes;
+import edu.eryx.luciel.lopez.arana.reto9.Parte2.process.Ayudantes;
 
+/**
+ * Manda a llamar los datos de las características que tendrá nuestro ayudante y las imprime.
+ * Crea un constructor, que serán nuestros ayudantes
+ */
 public class CLI {
     public static void mostrarAyudantes() {
         Ayudantes[] ayudantes = new Ayudantes[5];
