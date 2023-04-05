@@ -12,7 +12,7 @@ public class SrEngineer extends JrEngineer implements Interviewer {
     }
 
     @Override
-    void trabajar() {
-        System.out.println(" ");
+    public void trabajar() {
+        System.out.println("Trabaja con tremenda seguridad");
     }
 }

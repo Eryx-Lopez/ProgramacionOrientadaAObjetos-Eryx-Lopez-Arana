@@ -7,7 +7,7 @@ public class JrEngineer extends Employee implements Programmer{
     }
 
     @Override
-    void trabajar() {
-        System.out.println(" ");
+    public void trabajar() {
+        System.out.println("Trabaja nervioso");
     }
 }
