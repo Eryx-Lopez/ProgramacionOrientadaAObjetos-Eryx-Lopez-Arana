@@ -1,5 +1,8 @@
 package reto10.Clases;
 
+/**
+ * De nuevo, es la clase manager, que implementa la entrevista y hereda al empleado.
+ */
 public class Manager extends Employee implements Interviewer {
     @Override
     void trabajar() {

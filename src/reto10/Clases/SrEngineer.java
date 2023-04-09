@@ -1,5 +1,9 @@
 package reto10.Clases;
 
+/**
+ * La clase de los seniors hereda a los juniors, ya que lo que un junior sabe, también lo sabe un senior.
+ * Implementa la interfaz de Interviewr ya que el senior también se encarga de entrevistar
+ */
 public class SrEngineer extends JrEngineer implements Interviewer {
     @Override
     public void programar() {
