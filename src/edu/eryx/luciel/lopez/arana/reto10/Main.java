@@ -1,8 +1,7 @@
 package edu.eryx.luciel.lopez.arana.reto10;
-
 import edu.eryx.luciel.lopez.arana.reto10.Clases.*;
-
-import java.util.ArrayList;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * No voy a mentir, aquí probablemente debería de separar un poco más las cosas como en los paquetes de ui y process
@@ -30,17 +29,14 @@ public class Main {
         System.out.println(names);
 
 
-
-
-       /* CEO ceo = new CEO();
+       CEO ceo = new CEO();
         SrEngineer sr = new SrEngineer();
         Employee srCEO = sr;
         trabajar(srCEO);
         System.out.println(srCEO instanceof Interviewer);
 
-        CEO ceo2 = (CEO) new Manager();
         Manager manager = new CEO();
-        ceo2.interview();
+
         interview(manager);
 
 
@@ -64,7 +60,31 @@ public class Main {
 
         System.out.println(emp3 instanceof SrEngineer);
 
-        */
+        ArrayList<Employee> lista = new ArrayList<>();
+        lista.add(new JrEngineer("Mauricio", 18));
+        lista.add(new SrEngineer("Antonio", 20));
+
+        System.out.println(lista.stream().sorted().collect(Collectors.toList()));
+        System.out.println(lista);
+
+        Collections.sort(lista);
+        System.out.println(lista);
+
+        System.out.println(Collections.max(lista, Comparator.comparing(Employee::getPhoneNumber)));
+
+        Collections.sort(lista, Comparator.comparing(Employee::getPhoneNumber));
+        System.out.println(lista);
+
+        LinkedList<Employee> linked = new LinkedList<>();
+
+        HashMap<Employee, String> map = new HashMap<>();
+        map.put(new JrEngineer("Juanito", 19), "Juanito");
+        map.put(new JrEngineer("Mauricio", 18), "Mauricio");
+        map.put(new JrEngineer("Antonio", 20), "Antonio");
+        JrEngineer jr8 = new JrEngineer("Juanito",19);
+        System.out.println(jr8);
+
+
     }
      static void trabajar(Employee employee){
 

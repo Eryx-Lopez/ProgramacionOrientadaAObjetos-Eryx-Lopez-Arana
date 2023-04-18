@@ -5,6 +5,13 @@ package edu.eryx.luciel.lopez.arana.reto10.Clases;
  * Programmer (programar)
  */
 public class JrEngineer extends Employee implements Programmer{
+    public JrEngineer() {
+    }
+
+    public JrEngineer(String name, int age) {
+        super(name, age);
+    }
+
     @Override
     public void programar() {
         System.out.println("Programa como puede");

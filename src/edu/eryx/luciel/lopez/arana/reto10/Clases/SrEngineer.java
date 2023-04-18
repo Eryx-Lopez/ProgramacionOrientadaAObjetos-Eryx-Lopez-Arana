@@ -5,6 +5,13 @@ package edu.eryx.luciel.lopez.arana.reto10.Clases;
  * Implementa la interfaz de Interviewr ya que el senior también se encarga de entrevistar
  */
 public class SrEngineer extends JrEngineer implements Interviewer {
+    public SrEngineer() {
+    }
+
+    public SrEngineer(String name, int age) {
+        super(name, age);
+    }
+
     @Override
     public void programar() {
         System.out.println("Programa como quiere");
