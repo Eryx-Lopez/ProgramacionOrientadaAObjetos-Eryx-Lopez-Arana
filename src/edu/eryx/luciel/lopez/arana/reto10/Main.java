@@ -1,5 +1,10 @@
 package edu.eryx.luciel.lopez.arana.reto10;
 import edu.eryx.luciel.lopez.arana.reto10.Clases.*;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -11,90 +16,119 @@ import java.util.stream.Collectors;
  * entender el tema, y sí fue una especie de práctica más para mí que para la calificación, ehe.
  */
 public class Main {
-    public static void main(String[] args) {
-        Employee uno = new JrEngineer();
-        Employee dos = new SrEngineer();
-        Employee tres = new Manager();
 
-        ArrayList<Employee> names = new ArrayList<>();
+ static void testClases() {
+  Employee uno = new JrEngineer();
+  Employee dos = new SrEngineer();
+  Employee tres = new Manager();
 
-        uno.setName("Julio");
-        dos.setName("Pedro");
-        tres.setName("Ana");
+  CEO ceo = new CEO();
+  SrEngineer sr = new SrEngineer();
+  Employee srCEO = sr;
+  trabajar(srCEO);
+  System.out.println(srCEO instanceof Interviewer);
 
-        names.add(uno);
-        names.add(dos);
-        names.add(tres);
+  Manager manager = new CEO();
+  interview(manager);
 
-        System.out.println(names);
+  JrEngineer jr = new SrEngineer();
+  SrEngineer sr2 = (SrEngineer) jr;
+  programar(jr);
+  trabajar(sr2);
 
+  sr.programar();
+  sr.trabajar();
 
-       CEO ceo = new CEO();
-        SrEngineer sr = new SrEngineer();
-        Employee srCEO = sr;
-        trabajar(srCEO);
-        System.out.println(srCEO instanceof Interviewer);
+  ((SrEngineer) jr).interview();
+  sr.interview();
 
-        Manager manager = new CEO();
+  HR hr = new HR();
+  Employee emp3 = new Manager();
+  System.out.println(ceo instanceof Manager);
+  trabajar(hr);
+  interview(hr);
+  trabajar(new JrEngineer());
 
-        interview(manager);
+  System.out.println(emp3 instanceof SrEngineer);
 
+  ArrayList<Employee> lista = new ArrayList<>();
+  lista.add(new JrEngineer("Mauricio", 18));
+  lista.add(new SrEngineer("Antonio", 20));
 
-        JrEngineer jr = new SrEngineer();
-        SrEngineer sr2 = (SrEngineer) jr;
-        programar(jr);
-        trabajar(sr2);
+  System.out.println(lista.stream().sorted().collect(Collectors.toList()));
+  System.out.println(lista);
 
-        sr.programar();
-        sr.trabajar();
+  Collections.sort(lista);
+  System.out.println(lista);
 
-        ((SrEngineer) jr).interview();
-        sr.interview();
+  System.out.println(Collections.max(lista, Comparator.comparing(Employee::getName)));
 
-        HR hr = new HR();
-        Employee emp3 = new Manager();
-        System.out.println(ceo instanceof Manager);
-        trabajar(hr);
-        interview(hr);
-        trabajar(new JrEngineer());
+  Collections.sort(lista, Comparator.comparing(Employee::getName));
+  System.out.println(lista);
 
-        System.out.println(emp3 instanceof SrEngineer);
+  LinkedList<Employee> linked = new LinkedList<>();
 
-        ArrayList<Employee> lista = new ArrayList<>();
-        lista.add(new JrEngineer("Mauricio", 18));
-        lista.add(new SrEngineer("Antonio", 20));
-
-        System.out.println(lista.stream().sorted().collect(Collectors.toList()));
-        System.out.println(lista);
-
-        Collections.sort(lista);
-        System.out.println(lista);
-
-        System.out.println(Collections.max(lista, Comparator.comparing(Employee::getPhoneNumber)));
-
-        Collections.sort(lista, Comparator.comparing(Employee::getPhoneNumber));
-        System.out.println(lista);
-
-        LinkedList<Employee> linked = new LinkedList<>();
-
-        HashMap<Employee, String> map = new HashMap<>();
-        map.put(new JrEngineer("Juanito", 19), "Juanito");
-        map.put(new JrEngineer("Mauricio", 18), "Mauricio");
-        map.put(new JrEngineer("Antonio", 20), "Antonio");
-        JrEngineer jr8 = new JrEngineer("Juanito",19);
-        System.out.println(jr8);
+  HashMap<Employee, String> map = new HashMap<>();
+  map.put(new JrEngineer("Juanito", 19), "Juanito");
+  map.put(new JrEngineer("Mauricio", 18), "Mauricio");
+  map.put(new JrEngineer("Antonio", 20), "Antonio");
+  JrEngineer jr8 = new JrEngineer("Juanito", 19);
+  System.out.println(jr8);
+ }
 
 
-    }
-     static void trabajar(Employee employee){
+ static void testwriteFiles() {
+  ArrayList<Employee> list = new ArrayList<>();
+  list.add(new JrEngineer("Juanito", 19));
+  list.add(new JrEngineer("Mauricio", 18));
+  list.add(new JrEngineer("Antonio", 20));
 
-     }
-    static void programar(Programmer programmer){
+  String fileName = "testFile.txt";
+  Path file = Paths.get(fileName);
 
-    }
-    static void interview(Interviewer interviewer){
-    }
+  try {
+   List<String> lines = list
+           .stream()
+           .map(Employee::toString)
+           .collect(Collectors.toList());
+
+   Files.write(file, lines);
+  } catch (IOException e) {
+   e.printStackTrace();
+  }
+ }
+
+ static void testReadFiles() {
+  String fileName = "testFile.txt";
+  Path file = Paths.get(fileName);
+  try {
+   for(String line : Files.readAllLines(file)){
+    System.out.println(line.split("=")[0]);
+    System.out.println(line.split("=")[1]);
+   }
+
+  } catch (IOException e) {
+   e.printStackTrace();
+  }
+ }
 
 
+ static void trabajar(Employee employee) {
+
+ }
+
+ static void programar(Programmer programmer) {
+
+ }
+
+ static void interview(Interviewer interviewer) {
+ }
+
+ public static void main(String[] args) {
+  testwriteFiles();
+  testReadFiles();
+ }
 }
+
+
 

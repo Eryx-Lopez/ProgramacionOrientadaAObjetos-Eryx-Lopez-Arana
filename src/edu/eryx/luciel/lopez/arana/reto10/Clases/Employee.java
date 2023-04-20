@@ -6,6 +6,8 @@ import java.util.Objects;
  * Es una clase abstracta que se encarga de hacer trabajar a los empleados, lo cual son, todos
  */
 public abstract class Employee implements Comparable <Employee>{
+    int age;
+    String name;
     public Employee() {
     }
 
@@ -18,40 +20,31 @@ public abstract class Employee implements Comparable <Employee>{
         this.name = name;
         this.age = age;
     }
-    protected String name;
-    public void setName(String name) {
-        this.name = name;
-    }
-    protected int age;
 
-    protected String phoneNumber;
-    public String getPhoneNumber(){
-        return phoneNumber;
+
+    public int getAge() {
+        return age;
     }
+
+    public String getName() {
+        return name;
+    }
+
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Employee)) return false;
-        Employee employee = (Employee) o;
-        return age == employee.age && Objects.equals(name, employee.name) && Objects.equals(phoneNumber, employee.phoneNumber);
+    public int hashCode() {
+        return Objects.hash(name, age);
     }
+
+    public void trabajar(){
+        System.out.println("Trabajo genérico");
+    };
 
     @Override
     public String toString() {
         return "Employee{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", phoneNumber='" + phoneNumber + '\'' +
+                "age=" + age +
+                ", name='" + name + '\'' +
                 '}';
     }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, age, phoneNumber);
-    }
-
-    public abstract void trabajar();
-
-
 }
