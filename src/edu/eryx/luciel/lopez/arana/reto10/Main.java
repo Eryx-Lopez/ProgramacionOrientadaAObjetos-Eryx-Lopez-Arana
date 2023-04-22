@@ -112,17 +112,17 @@ public class Main {
   Path file = Paths.get(fileName);
   try {
 
-
    for(String line : Files.readAllLines(file)){
     List<String> lines = readList
             .stream()
             .map(Employee::toString)
             .collect(Collectors.toList());
-    readList.add(line.split(";")[0]);
-    System.out.println(readList);
-    //System.out.println(line.split(";")[0]);
-    //System.out.println(line.split(";")[1]);
+    lines.add(line);
+    System.out.println(lines);
+    System.out.println("------------------");
+   // printOver20Emp(lines);
    }
+
 
   } catch (IOException e) {
    e.printStackTrace();
@@ -130,8 +130,13 @@ public class Main {
 
  }
 
- static void printOver20Emp() {
-  testReadFiles();
+ static void printOver20Emp(List<String> lines, Employee employee) {
+  for(int i = 0; i<lines.size(); i++){
+   if (employee.getAge()>20){
+    System.out.println(lines);
+   }
+
+  }
  }
 
 
@@ -147,7 +152,7 @@ public class Main {
  }
 
  public static void main(String[] args) {
-  testwriteFiles();
+  //testwriteFiles();
   testReadFiles();
  }
 }
