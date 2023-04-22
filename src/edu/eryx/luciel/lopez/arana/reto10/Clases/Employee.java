@@ -42,9 +42,8 @@ public abstract class Employee implements Comparable <Employee>{
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "age=" + age +
-                ", name='" + name + '\'' +
-                '}';
+        return "Employee: " +
+                 name +
+                "; Age: " + age ;
     }
 }

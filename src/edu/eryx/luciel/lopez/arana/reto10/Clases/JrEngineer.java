@@ -8,6 +8,13 @@ public class JrEngineer extends Employee implements Programmer{
     public JrEngineer() {
     }
 
+    protected String RFC;
+
+    public JrEngineer(String name, int age, String RFC) {
+        super(name, age);
+        this.RFC = RFC;
+    }
+
     public JrEngineer(String name, int age) {
         super(name, age);
     }

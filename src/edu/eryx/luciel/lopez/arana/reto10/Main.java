@@ -79,11 +79,19 @@ public class Main {
 
  static void testwriteFiles() {
   ArrayList<Employee> list = new ArrayList<>();
-  list.add(new JrEngineer("Juanito", 19));
-  list.add(new JrEngineer("Mauricio", 18));
-  list.add(new JrEngineer("Antonio", 20));
+  list.add(new JrEngineer("Kvothe", 19, "DHKE7820471H8"));
+  list.add(new JrEngineer("Juan Arcadio", 36, "AJEC3284934E2"));
+  list.add(new JrEngineer("Frederick", 53, "GJEO4856932M9"));
+  list.add(new JrEngineer("América", 18, "CIEM5685738A1"));
+  list.add(new JrEngineer("Maxon", 20, "MCJE8928741N9"));
+  list.add(new JrEngineer("Elliot ", 29, "ALOP2983970E5"));
+  list.add(new JrEngineer("Theodore", 26, "LOMP190598L7"));
+  list.add(new JrEngineer("Aristóteles", 19, "HYUM4512902U8"));
+  list.add(new JrEngineer("Chris", 26, "YRLN2893969M1"));
+  list.add(new JrEngineer("Victor", 32, "HLME679593J8"));
 
-  String fileName = "testFile.txt";
+
+  String fileName = "testWriteFile.txt";
   Path file = Paths.get(fileName);
 
   try {
@@ -99,17 +107,31 @@ public class Main {
  }
 
  static void testReadFiles() {
-  String fileName = "testFile.txt";
+  ArrayList<Employee> readList = new ArrayList<>();
+  String fileName = "testReadFile.txt";
   Path file = Paths.get(fileName);
   try {
+
+
    for(String line : Files.readAllLines(file)){
-    System.out.println(line.split("=")[0]);
-    System.out.println(line.split("=")[1]);
+    List<String> lines = readList
+            .stream()
+            .map(Employee::toString)
+            .collect(Collectors.toList());
+    readList.add(line.split(";")[0]);
+    System.out.println(readList);
+    //System.out.println(line.split(";")[0]);
+    //System.out.println(line.split(";")[1]);
    }
 
   } catch (IOException e) {
    e.printStackTrace();
   }
+
+ }
+
+ static void printOver20Emp() {
+  testReadFiles();
  }
 
 
