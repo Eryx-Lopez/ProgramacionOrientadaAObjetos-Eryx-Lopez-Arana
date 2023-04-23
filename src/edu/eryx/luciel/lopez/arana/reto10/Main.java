@@ -9,15 +9,19 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 
-/**
- * No voy a mentir, aquí probablemente debería de separar un poco más las cosas como en los paquetes de ui y process
- * pero no supe cómo aplicarlo en este caso, así que va directo a esta clase.
- *
- * En Main se crean todas las variables y objetos que se necesiten, y todas las pruebas que necesite para medio
- * entender el tema, y sí fue una especie de práctica más para mí que para la calificación, ehe.
- */
+
 public class Main {
 
+ /**
+  *
+  * No voy a mentir, aquí probablemente debería de separar un poco más las cosas como en los paquetes de ui y process
+  * pero no supe cómo aplicarlo en este caso, así que va directo a esta clase.
+  * En testClases se crean todas las variables y objetos que se necesiten, y todas las pruebas que necesite para medio
+  * entender el tema, y sí fue una especie de práctica más para mí que para la calificación, ehe.
+  *
+  * Es una prueba de las diferentes clases y herencias que se han manejado en Employee, JrEngineer y SrEngineer, creando variables
+  * y objetos, así como polimorfismo.
+  */
  static void testClases() {
   Employee uno = new JrEngineer();
   Employee dos = new SrEngineer();
@@ -77,7 +81,9 @@ public class Main {
   System.out.println(jr8);
  }
 
-
+ /**
+  * Se crea una lista con 10 empleados, para luego escribirlos en un archivo de texto.
+  */
  static void testwriteFiles() {
   ArrayList<Employee> list = new ArrayList<>();
   list.add(new JrEngineer("Kvothe", 19, "DHKE7820471H8"));
@@ -107,6 +113,10 @@ public class Main {
   }
  }
 
+ /**
+  * Lee los datos de un archivo, para luego hacer uso de otro método (que no me terminó de salir) para imprimir los empleados
+  * que son mayores de 20.
+  */
  static void testReadFiles() {
   ArrayList<Employee> readList = new ArrayList<>();
   String fileName = "testReadFile.txt";
@@ -136,6 +146,11 @@ public class Main {
   }
  }
 
+ /**
+  * Método para leer los datos y almacenar los que son mayores de 20 en edad en una lista.
+  * @param employees el tipo de dato (Employee) que almacenará la lista
+  * @return todos los empleados que son mayores de 20
+  */
  static List<Employee> printOver20Emp(List<Employee> employees) {
   List<Employee> employeesOver20 = Collections.emptyList();
   for (int i = 0; i < employees.size(); i++) {
@@ -148,14 +163,26 @@ public class Main {
   }return employeesOver20;
   }
 
+ /**
+  * Pone a trabjar
+  * @param employee los que caen bajo la categoría de empleados
+  */
   static void trabajar (Employee employee){
 
   }
 
+ /**
+  * Pone a programar
+  * @param programmer los que caen bajo la categoría de programadores
+  */
   static void programar (Programmer programmer){
 
   }
 
+ /**
+  * Pone a entrevistar
+  * @param interviewer los que caen bajo la categoría de entrevistadores
+  */
   static void interview (Interviewer interviewer){
   }
 
