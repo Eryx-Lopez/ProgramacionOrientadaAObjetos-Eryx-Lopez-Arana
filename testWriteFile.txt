@@ -1,10 +1,20 @@
-Employee: Kvothe; Age: 19
-Employee: Juan Arcadio; Age: 36
-Employee: Frederick; Age: 53
-Employee: América; Age: 18
-Employee: Maxon; Age: 20
-Employee: Elliot ; Age: 29
-Employee: Theodore; Age: 26
-Employee: Aristóteles; Age: 19
-Employee: Chris; Age: 26
-Employee: Victor; Age: 32
+JrEngineer; Kvothe; Age; 19; RFC; DHKE7820471H8
+JrEngineer; Juan Arcadio; Age; 36; RFC; AJEC3284934E2
+JrEngineer; Frederick; Age; 53; RFC; GJEO4856932M9
+JrEngineer; América; Age; 18; RFC; CIEM5685738A1
+JrEngineer; Maxon; Age; 20; RFC; MCJE8928741N9
+JrEngineer; Elliot ; Age; 29; RFC; ALOP2983970E5
+JrEngineer; Theodore; Age; 26; RFC; LOMP190598L7
+JrEngineer; Aristóteles; Age; 19; RFC; HYUM4512902U8
+JrEngineer; Chris; Age; 26; RFC; YRLN2893969M1
+JrEngineer; Victor; Age; 32; RFC; HLME679593J8
+JrEngineer; Aspen; Age; 34; RFC; DHKE7820471H8
+JrEngineer; Juan; Age; 38; RFC; AJEC3284934E2
+JrEngineer; Laura; Age; 59; RFC; GJEO4856932M9
+JrEngineer; Kriss; Age; 19; RFC; CIEM5685738A1
+JrEngineer; Layla; Age; 25; RFC; MCJE8928741N9
+JrEngineer; Elliot ; Age; 29; RFC; ALOP2983970E5
+JrEngineer; Mateo; Age; 31; RFC; LOMP190598L7
+JrEngineer; Anthony; Age; 49; RFC; HYUM4512902U8
+JrEngineer; Gustavo; Age; 27; RFC; YRLN2893969M1
+JrEngineer; Samantha; Age; 32; RFC; HLME679593J8

@@ -126,11 +126,16 @@ public class Main {
   Path file = Paths.get(fileName);
 
   try {
-   List<String> lines = list
+  /* List<String> lines = list
            .stream()
            .map(Employee::toString)
            .collect(Collectors.toList());
 
+   */
+   List<String> lines = new ArrayList<>();
+   for(Employee line : list){
+    lines.add(line.toString());
+   }
    Files.write(file, lines);
   } catch (IOException e) {
    e.printStackTrace();
@@ -141,26 +146,23 @@ public class Main {
   * Lee los datos de un archivo, para luego hacer uso de otro método (que no me terminó de salir) para imprimir los empleados
   * que son mayores de 20.
   */
- static void testReadFiles() {
-  ArrayList<Employee> readList = new ArrayList<>();
-  String fileName = "testReadFile.txt";
+ static void testReadFilterFiles() {
+//  ArrayList<Employee> readList = new ArrayList<>();
+  String fileName = "testWriteFile.txt";
   Path file = Paths.get(fileName);
+  List<JrEngineer> jrs = new ArrayList<>();
 
   try {
 
 
-   for (String line : Files.readAllLines(file)) {
-    List<String> lines = readList
-            .stream()
-            .map(Employee::toString)
-            .collect(Collectors.toList());
-    System.out.println(line);
-    List<Employee> employeesOver20 = new ArrayList<>();
-    for(int i = 0; i< line.length(); i++){
-     employeesOver20.add(new JrEngineer());
-     printOver20Emp(employeesOver20);
-    }
+   for(String line :Files.readAllLines(file)) {
+    String[] splitVal = line.split(";");
+    int age = Integer.valueOf(splitVal[3].trim());
+    if(age > 19){
+    jrs.add(new JrEngineer(splitVal[1], age,splitVal[5]));
+       }
    }
+   System.out.println(jrs);
 
    System.out.println("------");
 
@@ -189,7 +191,7 @@ public class Main {
 
   public static void main (String[]args){
    testwriteFiles();
-   testReadFiles();
+   testReadFilterFiles();
   }
  }
 

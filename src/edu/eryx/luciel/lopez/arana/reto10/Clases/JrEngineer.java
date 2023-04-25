@@ -8,6 +8,14 @@ public class JrEngineer extends Employee implements Programmer{
     public JrEngineer() {
     }
 
+    @Override
+    public String toString() {
+        return "JrEngineer; " +
+                name +
+                "; Age; " + age +
+                "; RFC; " + RFC;
+    }
+
     protected String RFC;
 
     public JrEngineer(String name, int age, String RFC) {
