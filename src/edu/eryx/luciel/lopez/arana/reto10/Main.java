@@ -81,6 +81,30 @@ public class Main {
   System.out.println(jr8);
  }
 
+
+ /**
+  * Pone a trabjar
+  * @param employee los que caen bajo la categoría de empleados
+  */
+ static void trabajar (Employee employee){
+
+ }
+
+ /**
+  * Pone a programar
+  * @param programmer los que caen bajo la categoría de programadores
+  */
+ static void programar (Programmer programmer){
+
+ }
+
+ /**
+  * Pone a entrevistar
+  * @param interviewer los que caen bajo la categoría de entrevistadores
+  */
+ static void interview (Interviewer interviewer){
+ }
+
  /**
   * Se crea una lista con 10 empleados, para luego escribirlos en un archivo de texto.
   */
@@ -161,29 +185,6 @@ public class Main {
    }
 
   }return employeesOver20;
-  }
-
- /**
-  * Pone a trabjar
-  * @param employee los que caen bajo la categoría de empleados
-  */
-  static void trabajar (Employee employee){
-
-  }
-
- /**
-  * Pone a programar
-  * @param programmer los que caen bajo la categoría de programadores
-  */
-  static void programar (Programmer programmer){
-
-  }
-
- /**
-  * Pone a entrevistar
-  * @param interviewer los que caen bajo la categoría de entrevistadores
-  */
-  static void interview (Interviewer interviewer){
   }
 
   public static void main (String[]args){
