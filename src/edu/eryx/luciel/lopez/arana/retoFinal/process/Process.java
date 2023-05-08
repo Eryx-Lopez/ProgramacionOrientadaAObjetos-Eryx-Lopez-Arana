@@ -13,13 +13,18 @@ public class Process {
         int hojasDeVidaTotal = 0;
         int arboles = 0;
 
-        for (int i = 1; i < 4; i++) {
+        do{
             Random random = new Random();
             int madera = (random.nextInt(5)); //Ver cómo hacer para que no imprima el 0
             int hojasDeVida = (random.nextInt(4)); //Cómo imprimir entre dos rangos
-
+            arboles++;
             System.out.println();
-            System.out.println("Árbol número " + i + ".");
+            System.out.println("Árbol número " + arboles + ".");
+            try {
+                Thread.sleep(2500);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
             System.out.println("Has recolectado " + madera + " piezas de madera.\n" +
                     "   Con 4 piezas de madera puedes hacer una casa para las hadas.");
             System.out.println();
@@ -27,12 +32,15 @@ public class Process {
                     "   Curan un punto de vida");
             maderaTotal += madera;
             hojasDeVidaTotal += hojasDeVida;
-            try {
-                Thread.sleep(2500);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        }
+
+        }while (arboles  < 3);
+
+
+
+       // for (int i = 1; i < 4; i++) {
+
+        //}
+
 
         System.out.println("\nLa madera recolectada fue: " + maderaTotal);
         System.out.println("\nLas hojas de vida recolectadas fueron: " + hojasDeVidaTotal);
