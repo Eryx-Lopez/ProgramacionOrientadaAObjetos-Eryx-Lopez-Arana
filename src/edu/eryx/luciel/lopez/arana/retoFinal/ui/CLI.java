@@ -3,37 +3,37 @@ import edu.eryx.luciel.lopez.arana.retoFinal.process.Process;
 import edu.eryx.luciel.lopez.arana.utils.Menu;
 import edu.eryx.luciel.lopez.arana.utils.MenuAction;
 
-import static edu.eryx.luciel.lopez.arana.retoFinal.process.Process.menuGoToForest;
+import static edu.eryx.luciel.lopez.arana.retoFinal.process.OptionMenus.menuGoToForest;
+
 
 public class CLI {
     public static Menu menuPrincipal = new Menu();
 
+    private static final String INTRODUCCION = "Bienvenido, viajero, lo siento, no pude evitar ver la espada que llevas contigo\n" +
+            "Me gustaría solicitar tu ayuda... hace unos años llegó un mago que nos trató con\n" +
+            "dulzura y no intentó ayudar.. pero se fue por un mal camino y ahora captura a las\n" +
+            "hadas que están a su alcance y vivimos con miedo... necesitamos la ayuda de alguien\n" +
+            "valiente que pueda rescatarnos.. no quiero que mi pueblo siga viviendo en este tormento\n\n" +
+            "¿Nos ayudarías?";
 
-    private static String INTRODUCTION = "Bienvenido, querido viajero...\n" +
-        "Déjame contarte una pequeña historia.\n\n" +
-        "Hace mucho mucho tiempo, un mago llegó a una pequeña aldea, era muy cariñoso con todos\n" +
-        "nosotros, pero cuando se dio cuenta que podía utilizarnos para aumentar su poder, pronto\n" +
-        "todo se vio sumido en una gran oscuridad.. \n\n" +
-        "Ahora tiene a casi todas las hadas cautivas, es muy poderoso... ¿Crees que puedas ayudarnos " +
-        "a librarnos de él?";
-
-    private static String yesOption = "Sí, vamos"; //Esta es la opción que se muestra
-    private static String noOption = "No, qué miedo el mago, lo siento";
+    private static final String yesOption = "Está bien, vamos"; //Esta es la opción que se muestra
+    private static final String noOption = "Lo siento.. ya tengo un camino por recorrer, espero que alguien más pueda ayudarles";
 
 
-    private static MenuAction yesAction = (scanner) -> {
+    private static final MenuAction yesAction = (scanner) -> {
         //Aquí es lo que se ejecuta cuando se selecciona la opción correspondiente
-        System.out.println("¡Gracias por ayudarnos! Deja te enseño cómo funciona esto.\n" +
-                "Sólo puedes talar tres árboles antes de atacar al ogro. Al talar cada árbol, obtendrás\n" +
-                "madera y hojas de vida. Con 4 de madera puedes hacer una casa para 5 hadas. Con una hoja de vida\n" +
-                "puedes recuperar un punto de vida.\n" +
-                "Ahora vamos a talar árboles");
+        System.out.println("De verdad no sabes lo mucho que te agradezco que nos ayudes.. Deja darte\n" +
+                "una pequeña introducción a el cómo puedes rescatar a las hadas.\n\n" +
+                "Como el Mago destruyó casi todas las casas, las hadas que logran escapar no tienen\n" +
+                "en dónde refugiarse, por lo que es esencial que construyas casas antes de liberar a las hadas.\n" +
+                "Al talar árboles, obtendrás madera, y con 4 puedes hacer una casa, no es tan difícil.\n" +
+                "Cada casa puede dar refugio a 5 hadas.\n\n" +
+                "¡Vamos a talar árboles!");
+
         Process.goToForest();
 
     };
-    private static MenuAction noAction = (scanner) -> {
-        System.out.println("¿De verdad no vas a ayudarnos?");
-    };
+    private static final MenuAction noAction = (scanner) -> System.out.println("¿De verdad no vas a ayudarnos?");
 
     static {
         menuPrincipal
@@ -46,6 +46,8 @@ public class CLI {
     }
 
     public static void main(String[] args) {
+        System.out.println(INTRODUCCION);
+
         menuPrincipal.showMenu();
         var option = menuPrincipal.readOption();
         menuPrincipal.selectAndRunOption(option);
@@ -53,6 +55,10 @@ public class CLI {
         menuGoToForest.showMenu();
         var option1 = menuGoToForest.readOption();
         menuGoToForest.selectAndRunOption(option1);
+
+        System.out.println("Oh, no.. ¿escuchas eso? ¡Es un ogro del Mago! ¡Atácalo antes de que sea muy tarde!");
+
+
 
 
       /*  do {
