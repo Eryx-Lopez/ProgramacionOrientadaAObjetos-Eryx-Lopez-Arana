@@ -1,4 +1,5 @@
 package edu.eryx.luciel.lopez.arana.retoFinal.ui;
+import edu.eryx.luciel.lopez.arana.retoFinal.process.Calculadoras;
 import edu.eryx.luciel.lopez.arana.retoFinal.process.Process;
 import edu.eryx.luciel.lopez.arana.utils.Menu;
 import edu.eryx.luciel.lopez.arana.utils.MenuAction;
@@ -48,7 +49,7 @@ public class CLI {
     public static void main(String[] args) {
         System.out.println(INTRODUCCION);
 
-        menuPrincipal.showMenu();
+      /*  menuPrincipal.showMenu();
         var option = menuPrincipal.readOption();
         menuPrincipal.selectAndRunOption(option);
 
@@ -56,8 +57,10 @@ public class CLI {
         var option1 = menuGoToForest.readOption();
         menuGoToForest.selectAndRunOption(option1);
 
-        System.out.println("Oh, no.. ¿escuchas eso? ¡Es un ogro del Mago! ¡Atácalo antes de que sea muy tarde!");
+       */
 
+        System.out.println("Oh, no.. ¿escuchas eso? ¡Es un ogro del Mago! ¡Atácalo antes de que sea muy tarde!");
+        Calculadoras.ataque();
 
 
 
@@ -71,4 +74,5 @@ public class CLI {
 
 
     }
+
 }

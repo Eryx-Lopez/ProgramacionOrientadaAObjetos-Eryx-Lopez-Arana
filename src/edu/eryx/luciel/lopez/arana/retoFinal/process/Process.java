@@ -31,6 +31,7 @@ public class Process {
                 "pero no te preocupes si no puedes rescatar a muchas, casi todas están con el Mago.\n\n" +
                 "Ahora bien, ambos pueden atacar y defenderse, así que ten cuidado.");
 
+
     }
 }
 

@@ -40,12 +40,15 @@ public class OptionMenus {
         };
         static String yaMeArrepenti = "Sabes qué.. creo que es mejor que continúe con mi camino";
         public static MenuAction yaMearrepentiAction = (scanner) -> System.out.println("kshgsjkhgskgs");
+        static String prueba = "Ogro";
+        public static MenuAction pruebaAction = (scanner) -> System.out.println();
 
     public static Menu menuAtacarOgro = new Menu();
         static String atacarOption = "Atacar";
         static String defenderOption = "Defender";
+        static String huirOption = "Huir";
         public static MenuAction atacarAction = (scanner) -> {
-
+            System.out.println("¡Atacas al ogro con tu espada");
 
         };
 
