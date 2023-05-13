@@ -14,11 +14,11 @@ import java.util.Scanner;
 
 public class Menu {
     Scanner scanner = new Scanner(System.in);
-        private String Request_Option = "¿Qué dices?: ";
+        private final String Request_Option = "¿Qué dices?: ";
 
-        private String Type_Error = "El valor ingresado debe de ser un número, por favor introduzca un valor disponible.";
+        private final String Type_Error = "El valor ingresado debe de ser un número, por favor introduzca un valor disponible.";
 
-        private String Invalid_Option = "Opción no disponible, por favor introduzca un número válido:";
+        private final String Invalid_Option = "Opción no disponible, por favor introduzca un número válido:";
 
         private ArrayList<String> optionList = new ArrayList<>();
         private ArrayList<MenuAction> actionList = new ArrayList<>();
@@ -44,7 +44,7 @@ public class Menu {
         }
 
         public void createMenu(){
-            optionList.add("Salir del juego");
+            optionList.add("Terminar programa");
         }
 
        public void clearMenu() {

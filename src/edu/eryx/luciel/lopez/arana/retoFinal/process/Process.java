@@ -3,11 +3,12 @@ package edu.eryx.luciel.lopez.arana.retoFinal.process;
 import edu.eryx.luciel.lopez.arana.retoFinal.process.clases.Jugador;
 import edu.eryx.luciel.lopez.arana.retoFinal.process.clases.Ogro;
 
+import static edu.eryx.luciel.lopez.arana.retoFinal.process.OptionMenus.menuAldea;
 import static edu.eryx.luciel.lopez.arana.retoFinal.process.OptionMenus.menuPeleaOgro;
 
 public class Process {
-    public static Jugador jugador = new Jugador(50, 10, false);
-    public static Ogro ogro = new Ogro(80,8,false);
+    public static Jugador jugador = new Jugador(30, 10, false);
+    public static Ogro ogro = new Ogro(50, 8, false);
     public static int hadasRescatadas = 0;
 
     public static void goToForest() {
@@ -72,7 +73,8 @@ public class Process {
         jugador.setDefensaActiva(false);
         iniciarTurnoOgro();
     }
-    public static void defenderDelOgroAction(){
+
+    public static void defenderDelOgroAction() {
         jugador.toString();
         ogro.toString();
         jugador.setDefensaActiva(true);
@@ -80,42 +82,50 @@ public class Process {
     }
 
     public static void pelearOgrovsHeroe() {
+        System.out.println();
         System.out.println(jugador.toString());
         System.out.println(ogro.toString());
+        System.out.println();
 
         menuPeleaOgro.showMenu();
         var atacar = menuPeleaOgro.readOption();
         menuPeleaOgro.selectAndRunOption(atacar);
     }
-    public static void iniciarTurnoOgro(){
+
+    public static void iniciarTurnoOgro() {
         int decisionDelOgro = (int) (Math.random() * 2) + 1;
         //1 ataca
         //2 defiende
 
         if (decisionDelOgro == 1) { //ATAQUE DEL OGRO
             System.out.println("¡Prepárate, el ogro te ataca!");
+            System.out.println(jugador.toString());
+            System.out.println(ogro.toString());
+
             if (jugador.isDefensaActiva() == true) { //JUGADOR DEFIENDE
                 jugador.setVida(jugador.getVida() - (ogro.getPoderDeAtaque() / 3));
                 jugador.setDefensaActiva(false);
                 decisionDelOgro = 0;
                 decidirGanador();
 
-            }else { //JUGADOR ATACA
+            } else { //JUGADOR ATACA
                 ogro.setVida(ogro.getVida() - jugador.getPoderDeAtaque());
-                jugador.setVida((int)jugador.getVida() - ogro.getPoderDeAtaque());
+                jugador.setVida((int) jugador.getVida() - ogro.getPoderDeAtaque());
                 decisionDelOgro = 0;
                 decidirGanador();
-                            }
+            }
         }
 
-        if(decisionDelOgro == 2){ //DEFENSA DEL OGRO
+        if (decisionDelOgro == 2) { //DEFENSA DEL OGRO
             System.out.println("¡El ogro se defendió, ten cuidado!");
+            System.out.println(jugador.toString());
+            System.out.println(ogro.toString());
             if (jugador.isDefensaActiva() == true) { //JUGADOR DEFIENDE
                 decisionDelOgro = 0;
                 jugador.setDefensaActiva(false);
                 decidirGanador();
-            }else { //JUGADOR ATACA
-                ogro.setVida(ogro.getVida() - (jugador.getPoderDeAtaque()/2));
+            } else { //JUGADOR ATACA
+                ogro.setVida(ogro.getVida() - (jugador.getPoderDeAtaque() / 2));
                 decisionDelOgro = 0;
                 decidirGanador();
             }
@@ -124,29 +134,41 @@ public class Process {
 
     }
 
-    public static void decidirGanador(){
-        if (jugador.getVida() >  0 && ogro.getVida() > 0){
-            pelearOgrovsHeroe();
-        }
+    public static void decidirGanador() {
+
         if (ogro.getVida() <= 0){
+            jugador.resetVida(50);
+            System.out.println(jugador.toString());
+            System.out.println(ogro.toString());
             System.out.println("¡Bien hecho! Lograste derrotar al ogro.");
-            jugador.setVida(50);
+
             Calculadoras.ogrosMuertos++;
             hadasRescatadas = (int) (Math.random() * 7) + 1;
             System.out.println("Has rescatado " + hadasRescatadas + " hadas.");
             jugador.setPoderDeAtaque(+ Calculadoras.ogrosMuertos);
-            irALaAldea();
-
-
+            System.out.println("Regresemos a la aldea, es peligroso estar fuera por tanto tiempo.\n" +
+                    "Además necesitamos curarte un poco.");
         }
+
+
         if (jugador.getVida() <= 0 ){
+            System.out.println();
+            System.out.println(jugador.toString());
+            System.out.println(ogro.toString());
             Finales.finalSiAbandonas();
+        }
+        while (jugador.getVida() > 0 && ogro.getVida() > 0){
+            pelearOgrovsHeroe();
         }
 
     }
     public static void irALaAldea(){
-        System.out.println("Regresemos a la aldea, es peligroso estar fuera por tanto tiempo. Además\n" +
-                "necesitamos curarte un poco.");
+
+        System.out.println("Bienvenido a la aldea. Aquí es donde puedes descansar un poco\n" +
+                "y curarte de las heridas hechas durante tus peleas. ¿Recuerdas las hojas que\n" +
+                "te dieron cada que cortabas un árbol?\n" +
+                "Bueno, esas las puedes usar para comprar items dentro de la aldea. Vamos");
+
 
     }
 }

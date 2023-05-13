@@ -9,6 +9,6 @@ public class Jugador extends Personaje {
 
     @Override
     public String toString() {
-        return "Vida: " + vida + "\n" + "Poder: " + poderDeAtaque;
+        return "Vida: " + vida  + "                  Poder: " + poderDeAtaque;
     }
 }

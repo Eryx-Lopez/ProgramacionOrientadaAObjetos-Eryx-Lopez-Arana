@@ -11,8 +11,7 @@ import static edu.eryx.luciel.lopez.arana.retoFinal.process.OptionMenus.menuPrin
 public class Main {
     public static void main(String[] args) {
 
-      /* System.out.println(CLI.INTRODUCCION);
-
+        /*System.out.println(CLI.INTRODUCCION);
         menuPrincipal.showMenu();
         var principal = menuPrincipal.readOption();
         menuPrincipal.selectAndRunOption(principal);
@@ -27,9 +26,10 @@ public class Main {
             throw new RuntimeException(e);
         }
 
-       */
-
         System.out.println(CLI.A_LUCHAR);
+        System.out.println();
+
+         */
         Process.pelearOgrovsHeroe();
 
 

@@ -7,12 +7,8 @@ public class Ogro extends Personaje {
 
     @Override
     public String toString() {
-        return "Vida del ogro: " + vida + "\n" + "Poder del ogro: " + poderDeAtaque;
+        return "Vida del ogro: " + vida  + "         Poder del ogro: " + poderDeAtaque;
     }
 
-    public int poderDeAtaque(){
-
-        return 0;
-    }
 
 }

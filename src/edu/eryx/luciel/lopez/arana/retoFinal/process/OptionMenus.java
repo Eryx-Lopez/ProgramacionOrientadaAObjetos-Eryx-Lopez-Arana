@@ -70,11 +70,31 @@ public class OptionMenus {
             Process.defenderDelOgroAction();
         };
         static String huirOption = "Huir";
+        public static MenuAction huirAction = (scanner -> Finales.finalSiAbandonas());
         static {
             menuPeleaOgro.addOption(atacarOption,atacarAction);
             menuPeleaOgro.addOption(defenderOption,defenderAction);
-            menuPeleaOgro.createMenu();
+            menuPeleaOgro.addOption(huirOption,huirAction);
+
     }
+
+    //-------------------- MENÚ PELEA --------------------
+    public static Menu menuAldea = new Menu();
+        static String alBosqueDeNuevoOption = "No, quiero arriesgarme a ir al bosque de nuevo";
+        public static MenuAction alBosqueDeNuevoAction = (scanner) ->{
+            menuGoToForest.showMenu();
+        };
+        static String aLaAldeaOption = "Sí, es mejor que vayamos a la aldea";
+        public static MenuAction aLaAldeaAction = (scanner) -> {
+            Process.irALaAldea();
+        };
+        static {
+            menuAldea
+                    .addOption(alBosqueDeNuevoOption,alBosqueDeNuevoAction);
+            menuAldea
+                    .addOption(aLaAldeaOption, aLaAldeaAction);
+            menuAldea.createMenu();
+        }
 
 
 
