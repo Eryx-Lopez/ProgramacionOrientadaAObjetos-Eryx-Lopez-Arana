@@ -22,5 +22,12 @@ public class CLI {
     public static final String OGRO_ENCONTRADO ="¡Ahí, mira, un ogro!\n" +
             "...\n" +
             "¡Ahí viene!";
+    public static final String CONSTRUIR_CASAS = "...\n" +
+            "¡Casi olvido lo más importante! No puede ser, qué tonto...\n" +
+            "Rescatar hadas. Hay que rescatar a mis hadas. No sólo las hojas son importantes\n" +
+            "la madera también lo es.\n" +
+            "Por cada 4 trozos de madera, puedes hacer una casa para hadas. En cada casa caben 5 hadas.\n" +
+            "Y ahora sí, ¡Eso ya es todo! Ya deberías de ser capaz de moverte por tu cuenta.\n" +
+            "Cuídate, pequeño héroe.";
 
 }

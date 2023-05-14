@@ -34,7 +34,7 @@ public class Main {
           if (indicadorPelea == false) {
               System.out.println(CLI.A_LUCHAR);
               System.out.println();
-              Process.pelearOgrovsHeroe();
+              Process.iniciarPeleaOgrovsHeroe();
               indicadorPelea = true;
           }
 

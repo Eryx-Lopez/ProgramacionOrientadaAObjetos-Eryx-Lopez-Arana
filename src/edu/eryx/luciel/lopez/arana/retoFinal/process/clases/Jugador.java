@@ -19,7 +19,15 @@ public class Jugador extends Personaje {
     public static void setMaderaTotal(int maderaTotal) {
         Jugador.maderaTotal = maderaTotal;
     }
+    public static int casasConstruidas = 0;
 
+    public static int getCasasConstruidas() {
+        return casasConstruidas;
+    }
+
+    public static void setCasasConstruidas(int casasConstruidas) {
+        Jugador.casasConstruidas = casasConstruidas;
+    }
 
     public static int hojas = 0;
     public static int hojasTotal = 0;
