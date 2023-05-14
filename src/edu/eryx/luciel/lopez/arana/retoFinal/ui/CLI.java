@@ -19,8 +19,8 @@ public class CLI {
             "a un ogro, pero no te preocupes si no puedes rescatar a muchas, casi todas están con el Mago.\n" +
             "Ahora bien, ambos pueden atacar y defenderse, así que ten cuidado.";
 
-
-
-
+    public static final String OGRO_ENCONTRADO ="¡Ahí, mira, un ogro!\n" +
+            "...\n" +
+            "¡Ahí viene!";
 
 }

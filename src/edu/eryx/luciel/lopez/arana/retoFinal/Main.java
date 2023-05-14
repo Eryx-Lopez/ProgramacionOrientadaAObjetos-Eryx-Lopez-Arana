@@ -3,34 +3,46 @@ package edu.eryx.luciel.lopez.arana.retoFinal;
 import edu.eryx.luciel.lopez.arana.retoFinal.process.Process;
 import edu.eryx.luciel.lopez.arana.retoFinal.ui.CLI;
 
-import static edu.eryx.luciel.lopez.arana.retoFinal.process.OptionMenus.menuPeleaOgro;
-import static edu.eryx.luciel.lopez.arana.retoFinal.process.OptionMenus.menuGoToForest;
-import static edu.eryx.luciel.lopez.arana.retoFinal.process.OptionMenus.menuPrincipal;
+import static edu.eryx.luciel.lopez.arana.retoFinal.process.OptionMenus.*;
 
 
 public class Main {
+    private static boolean indicadorPelea = false;
     public static void main(String[] args) {
 
-        /*System.out.println(CLI.INTRODUCCION);
-        menuPrincipal.showMenu();
-        var principal = menuPrincipal.readOption();
-        menuPrincipal.selectAndRunOption(principal);
+    while(menuPrincipal.isAlive()){
+         /* System.out.println(CLI.INTRODUCCION);
 
-        menuGoToForest.showMenu();
-        var forest = menuGoToForest.readOption();
-        menuGoToForest.selectAndRunOption(forest);
+          menuPrincipal.showMenu();
+          var principal = menuPrincipal.readOption();
+          menuPrincipal.selectAndRunOption(principal);
 
-        try {
-            Thread.sleep(700);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
 
-        System.out.println(CLI.A_LUCHAR);
-        System.out.println();
+          */
 
-         */
-        Process.pelearOgrovsHeroe();
+          menuGoToForest.showMenu();
+          var forest = menuGoToForest.readOption();
+          menuGoToForest.selectAndRunOption(forest);
+
+
+          try {
+              Thread.sleep(700);
+          } catch (InterruptedException e) {
+              throw new RuntimeException(e);
+          }
+
+          if (indicadorPelea == false) {
+              System.out.println(CLI.A_LUCHAR);
+              System.out.println();
+              Process.pelearOgrovsHeroe();
+              indicadorPelea = true;
+          }
+
+          menuAldea.showMenu();
+          var aldea = menuAldea.readOption();
+          menuAldea.selectAndRunOption(aldea);
+      }
+
 
 
 

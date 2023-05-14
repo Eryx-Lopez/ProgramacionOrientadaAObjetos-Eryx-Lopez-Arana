@@ -18,7 +18,6 @@ public class Personaje {
     public void setVida(int vida) {
         this.vida = vida;
     }
-    public void resetVida(int vida){this.vida = getVida();}
 
     public int getPoderDeAtaque() {
         return poderDeAtaque;
