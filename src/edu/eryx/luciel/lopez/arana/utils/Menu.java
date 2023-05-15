@@ -14,11 +14,11 @@ import java.util.Scanner;
 
 public class Menu {
     Scanner scanner = new Scanner(System.in);
-        private String Request_Option = "Por favor elija una opción: ";
+        private final String Request_Option = "¿Qué dices?: ";
 
-        private String Type_Error = "El valor ingresado debe de ser un número, por favor introduzca un valor disponible.";
+        private final String Type_Error = "El valor ingresado debe de ser un número, por favor introduzca un valor disponible.";
 
-        private String Invalid_Option = "Opción no disponible, por favor introduzca un número válido:";
+        private final String Invalid_Option = "Opción no disponible, por favor introduzca un número válido:";
 
         private ArrayList<String> optionList = new ArrayList<>();
         private ArrayList<MenuAction> actionList = new ArrayList<>();
@@ -34,7 +34,7 @@ public class Menu {
 
     /**
      * Agregar una nueva opción al ArrayList
-     * @param option la opción que se se decide insertar desde otra clase
+     * @param option la opción que se decide insertar desde otra clase
      * @return la opción
      */
     public Menu addOption(String option, MenuAction action) {
@@ -44,10 +44,10 @@ public class Menu {
         }
 
         public void createMenu(){
-            optionList.add("Salir");
+            optionList.add("Terminar programa");
         }
 
-       public void cleanMenu() {
+       public void clearMenu() {
             optionList.clear();
         }
 
@@ -91,7 +91,7 @@ public class Menu {
         public void selectAndRunOption(int option){
             if (option == optionList.size()){
                 killMenu();
-                System.out.println("Saliendo...");
+                System.out.println("Gracias por jugar\nSaliendo...");
                 return;
             }
             actionList.get(option-1).run(scanner);
