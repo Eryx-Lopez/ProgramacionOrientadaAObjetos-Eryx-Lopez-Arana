@@ -3,7 +3,14 @@ package edu.eryx.luciel.lopez.arana.retoFinal.process;
 import edu.eryx.luciel.lopez.arana.utils.Menu;
 import edu.eryx.luciel.lopez.arana.utils.MenuAction;
 
-
+/**
+ * Aquí están todos los diferentes menús que se usan durante el juego:
+ * Menú princupal
+ * Menú del bosque
+ * Menú pelea
+ * Menú items
+ * Menú aldea
+ */
 public class OptionMenus {
 
     //-------------------- MENÚ PRINCIPAL --------------------

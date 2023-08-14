@@ -1,5 +1,8 @@
 package edu.eryx.luciel.lopez.arana.retoFinal.process.clases;
 
+/**
+ * Es la clase padre en donde se establece la vida, el poder y la defensa, así como el método toString
+ */
 public class Personaje {
     int vida;
     int poderDeAtaque;

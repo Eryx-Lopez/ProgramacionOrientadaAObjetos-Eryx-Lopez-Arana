@@ -1,5 +1,9 @@
 package edu.eryx.luciel.lopez.arana.retoFinal.process.clases;
 
+/**
+ * Es la clase que hereda del Personaje, que tiene todos los atributos de la clase padre, más los atributos
+ * personales de su clase. Como la madera, el número de casas, las hadas, las hojas y los ogros que ha matado.
+ */
 public class Jugador extends Personaje {
 
     public static int madera = 0;

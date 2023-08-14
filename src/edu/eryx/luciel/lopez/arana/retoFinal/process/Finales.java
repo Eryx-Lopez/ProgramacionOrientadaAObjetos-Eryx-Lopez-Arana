@@ -3,6 +3,9 @@ package edu.eryx.luciel.lopez.arana.retoFinal.process;
 import edu.eryx.luciel.lopez.arana.utils.Menu;
 import edu.eryx.luciel.lopez.arana.utils.MenuAction;
 
+/**
+ * Es la clase en donde se guardan los finales que se puede tener dentro del juego
+ */
 public class Finales {
     static String noJugarOption = "No, gracias.";
     public static MenuAction noJugarAction = (scanner) -> {
